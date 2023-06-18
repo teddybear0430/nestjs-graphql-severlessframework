@@ -1,0 +1,31 @@
+service: nestjs-graphql-sls
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-northeast-1
+  apiGateway:
+    shouldStartNameWithService: true
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+package:
+  include:
+    - src/**
+
+functions:
+  index-function:
+    handler: src/lambda.handler
+    timeout: 30 
+    events:
+      - http:
+          cors: true
+          path: '{proxy+}'
+          method: any
+
+custom:
+  serverless-offline:
+    host: 0.0.0.0
+    httpPort: 3000

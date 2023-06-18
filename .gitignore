@@ -1,0 +1,6 @@
+.env
+
+# app
+app/node_modules
+app/.webpack
+app/.serverless
