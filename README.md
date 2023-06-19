@@ -9,6 +9,8 @@ curl 'https://{endpoint}.execute-api.{region}.amazonaws.com/dev/graphql' -H 'Acc
 
 ## 使用技術
 
+スキーマファストで構築しています。
+
 - TypeScript
 - Node.js
 - GraphQL
