@@ -15,4 +15,4 @@ services:
       - 3000:3000
     volumes:
       - ./app:/app
-    # command: yarn start:dev
+    command: yarn start:dev
